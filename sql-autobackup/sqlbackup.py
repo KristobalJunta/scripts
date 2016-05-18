@@ -5,7 +5,7 @@ import subprocess
 import os
 
 config = ConfigParser()
-config.read(os.path.dirname(os.path.abspath(__file__)) + 'config')
+config.read(os.path.dirname(os.path.abspath(__file__)) + '/config')
 
 user = config.get('credentials', 'user')
 password = config.get('credentials', 'password')
