@@ -8,12 +8,13 @@ config.read('credentials')
 
 user = config.get('credentials', 'user')
 password = config.get('credentials', 'password')
+backupPath = config.get('backup_dir', 'path')
 
-databasesRaw = subprocess.check_output('mysql -u {} -e \'show databases;\''.format(user), shell=True)
+databasesRaw = subprocess.check_output('mysql -u{} -p{} -e \'show databases;\''.format(user, password), shell=True)
 
 databases = databasesRaw.split()
 excludeDb = ['Database', 'mysql', 'phpmyadmin', 'information_schema', 'performance_schema']
 databases = [db for db in databases if db not in excludeDb]
 
 for dbName in databases:
-    subprocess.call('mysqldump -u {} {} > {}.sql'.format(user, dbName, dbName), shell=True)
+    subprocess.call('mysqldump -u{} -p{} {} > {}/{}.sql &'.format(user, password, dbName, backupPath, dbName), shell=True)
