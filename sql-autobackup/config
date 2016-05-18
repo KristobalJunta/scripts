@@ -1,0 +1,5 @@
+[credentials]
+user=root
+password=D0ct0r
+[backup_dir]
+path=/home/eugen/Dropbox/gg_backup

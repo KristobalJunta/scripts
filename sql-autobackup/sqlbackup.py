@@ -4,7 +4,7 @@ from ConfigParser import ConfigParser
 import subprocess
 
 config = ConfigParser()
-config.read('credentials')
+config.read('config')
 
 user = config.get('credentials', 'user')
 password = config.get('credentials', 'password')
