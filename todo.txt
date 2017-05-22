@@ -1,3 +1,0 @@
-[ ] Create directories if they do not exist
-[ ] Think about using command line options
-
