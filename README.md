@@ -1,2 +1,3 @@
-# vps_scripts
-Scripts for performing tasks on my VPS
+# scripts
+
+Repository of various scripts I wrote for... various purposes
