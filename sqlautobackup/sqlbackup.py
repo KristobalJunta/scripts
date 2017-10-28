@@ -9,7 +9,7 @@ user = config.get('user')
 password = config.get('password')
 backup_path = config.get('backup_dir')
 
-if not os.path.exists(backup_path) or os.path.isdir(backup_path):
+if not os.path.exists(backup_path) or not os.path.isdir(backup_path):
     os.mkdir(backup_path, 0o755)
 
 databasesRaw = subprocess.check_output("mysql -u{} -p{} -e 'show databases;'".format(user, password), shell=True)
